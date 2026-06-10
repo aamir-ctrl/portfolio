@@ -522,60 +522,30 @@
   
 <script>
 function submitForm() {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const website = document.getElementById("website").value.trim();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const website = document.getElementById("website").value;
   const budget = document.getElementById("budget").value;
   const timeline = document.getElementById("timeline").value;
-  const message = document.getElementById("message").value.trim();
-  const consent = document.getElementById("consent").checked ? "Yes" : "No";
+  const message = document.getElementById("message").value;
 
-  if (!name || !email || !message || consent === "No") {
-    alert("❌ Please fill all required fields and agree to the privacy policy!");
-    return;
-  }
-fetch('https://aamir.cloud/submit.php', {
+  const text = `New Portfolio Lead
 
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      name: name,
-      email: email,
-      phone: phone,
-      website: website,
-      budget: budget,
-      timeline: timeline,
-      message: message,
-      consent: consent
-    })
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log("Server response:", data);
-    if (data.result === "success") {
-      alert(`✅ Thank you, ${name}! Your message has been sent.`);
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Website: ${website}
+Budget: ${budget}
+Timeline: ${timeline}
 
-      // Form clear भी कर सकते हो:
-      document.getElementById("name").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("phone").value = "";
-      document.getElementById("website").value = "";
-      document.getElementById("budget").value = "";
-      document.getElementById("timeline").value = "";
-      document.getElementById("message").value = "";
-      document.getElementById("consent").checked = false;
+Message:
+${message}`;
 
-    } else {
-      alert("❌ Something went wrong. Please try again!");
-    }
-  })
-  .catch(error => {
-    console.error("Fetch error:", error);
-    alert("❌ Failed to send. Please check your connection or try again later!");
-  });
+  window.open(
+    `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(text)}`,
+    "_blank"
+  );
 }
 </script>
 
