@@ -1,1 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aamir.Cloud | Web Developer & UI/UX Designer | Code Wave</title>
+  <meta name="description" content="Aamir's professional portfolio — Web Developer, UI/UX Designer, and Frontend Expert. Explore Code Wave for modern, stylish, and SEO-optimized websites." />
+  <meta name="keywords" content="Aamir Cloud, Code Wave, Aamir portfolio, web developer, frontend developer, UI UX designer, responsive websites, aamir.cloud, aamir web designer" />
+  <meta name="author" content="Aamir" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://aamir.cloud/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/906/906324.png" type="image/png">
+
+  <!-- Open Graph (Facebook, LinkedIn Preview) -->
+  <meta property="og:title" content="Aamir.Cloud | Web Developer & Designer" />
+  <meta property="og:description" content="Explore Aamir's portfolio featuring creative, responsive, and SEO-friendly web designs." />
+  <meta property="og:image" content="https://aamir.cloud/preview.jpg" />
+  <meta property="og:url" content="https://aamir.cloud/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aamir.Cloud | Web Developer & UI/UX Designer" />
+  <meta name="twitter:description" content="I build fast, modern, and animated websites for startups and businesses." />
+  <meta name="twitter:image" content="https://aamir.cloud/preview.jpg" />
+
+  <!-- Theme Color (for browsers/mobile) -->
+  <meta name="theme-color" content="#7b61ff">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Schema Markup (Structured Data for Google Knowledge Graph) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aamir",
+    "url": "https://aamir.cloud",
+    "image": "https://aamir.cloud/preview.jpg",
+    "jobTitle": "Web Developer & UI/UX Designer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Code Wave"
+    },
+    "sameAs": [
+      "https://github.com/",
+      "https://linkedin.com/in/",
+      "https://instagram.com/"
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --text: #000;
+      --accent: #7b61ff;
+      --glass: rgba(255, 255, 255, 0.6);
+    }
+    [data-theme='dark'] {
+      --bg: #1f1f1f;
+      --text: #fff;
+      --accent: #ffbd59;
+      --glass: rgba(30, 30, 30, 0.7);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      color: var(--text);
+      transition: 0.4s;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .toggle {
+      width: 50px;
+      height: 26px;
+      background: var(--accent);
+      border-radius: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .toggle-icon {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 22px;
+      height: 22px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    [data-theme='dark'] .toggle-icon {
+      transform: translateX(24px);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: yellow;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .form-container {
+      background: var(--glass);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: white;
+      color: #333;
+    }
+
+    button {
+      padding: 12px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #5f48d0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--glass);
+      color: var(--text);
+      margin-top: 50px;
+    }
+
+    .project-card {
+      background: var(--glass);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icons img {
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 70px;
+        left: 10px;
+        right: 10px;
+        flex-direction: column;
+        background: var(--glass);
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+    
+  
+}
+
+
+.form-container {
+  background: var(--glass);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  padding: 15px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .form-container input,
+[data-theme='dark'] .form-container select,
+[data-theme='dark'] .form-container textarea {
+  background: rgba(50, 50, 50, 0.8);
+  color: #eee;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  outline: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(123, 97, 255, 0.3);
+}
+
+.form-container label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.form-container label input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.form-container button {
+  padding: 15px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-container button:hover {
+  background: #5f48d0;
+  transform: translateY(-2px);
+}
+
+.form-container button:active {
+  transform: scale(0.98);
+}
+
+
+#gallery img {
+  width: 300px; 
+  height: 200px;   
+  object-fit: cover; 
+  border-radius: 10px;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+   <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="logo">Code Wave</div>
+    <nav id="nav">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#projects" onclick="closeMenu()">Projects</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+    <div class="toggle" onclick="toggleMode()">
+      <div class="toggle-icon" id="toggle-icon">🌞</div>
+    </div>
+  </header>
+
+  <section id="home" data-aos="fade-up">
+    <h1>Hi, I'm Aamir <span id="type" style="color: lightgreen"></span></h1>
+    <p style="text-align: center;">I create stylish and modern websites with animations, effects, and full responsiveness.</p>
+    <p style="text-align: center; color: yellow(--accent); font-style: italic;">Powered by <strong>aamir.cloud</strong></p>
+  </section>
+
+<section id="skills" data-aos="fade-up">
+  <h2>My Skills</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+
+    <!-- Existing Skills -->
+    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" width="60" />
+      <p>HTML5</p>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" width="60" />
+      <p>CSS3</p>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" width="60" />
+      <p>JavaScript</p>
+    </div>
+
+    <!-- New Skills -->
+    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" width="60" />
+      <p>Python</p>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+      <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" width="60" />
+      <p>Java</p>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+      <img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" width="60" />
+      <p>C++</p>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="700">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" width="60" />
+      <p>Node.js</p>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="800">
+      <img src="https://cdn-icons-png.flaticon.com/512/226/226772.png" width="60" />
+      <p>C#</p>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="900">
+  <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" width="60" />
+  <p>React</p>
+</div>
+
+    <div class="project-card" data-aos="fade-up" data-aos-delay="1000">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" width="60" alt="MySQL Logo" />
+  <p>MySQL</p>
+</div>
+
+
+  </div>
+</section>
+
+
+
+  <section id="projects" data-aos="zoom-in">
+    <h2>Projects</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <div class="project-card">Landing Page with Animated UI</div>
+      <div class="project-card">Tiger SMS OTP Panel</div>
+      <div class="project-card">Animated Portfolio Website</div>
+    </div>
+  </section>
+
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p style="text-align: center;">I'm a passionate web developer focused on creating beautiful, responsive and modern web experiences.</p>
+    <div class="social-icons" style="text-align:center;">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="30"></a>
+    </div>
+  </section>
+
+<section id="gallery" data-aos="fade-up">
+  <h2>Gallery</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+    <img src="https://static.vecteezy.com/system/resources/previews/025/501/052/large_2x/team-of-software-developers-working-on-computers-while-sitting-at-desk-in-modern-office-inside-a-software-company-office-and-workers-rearview-ai-generated-free-photo.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="0" />
+    <img src="https://media.glassdoor.com/l/1655606/wholly-software-office.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="100" />
+    <img src="https://media.glassdoor.com/l/f5/23/cf/2c/maq-software-office.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="200" />
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/96bd0b147907769.62cc03b6731f6.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="300" />
+    <img src="https://i.pinimg.com/736x/66/66/a1/6666a1e9277ef200f6b68e8d81d3e7e1--software-development-modern-offices.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="400" />
+    <img src="https://officesnapshots.com/wp-content/uploads/2018/09/software-house-offices-gliwice-12.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="500" />
+    <img src="https://officesnapshots.com/wp-content/uploads/2018/02/almirall-offices-barcelona-areazero-2.0-13-1200x801.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="600" />
+    <img src="https://media.glassdoor.com/l/af/35/88/59/workstations-2.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="700" />
+    <img src="https://tse2.mm.bing.net/th/id/OIP.GpbitJ258VmsHGZG2Adt2gHaE8?w=1000&h=667&rs=1&pid=ImgDetMain&o=7&rm=3" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="800" />
+    <img src="https://media.glassdoor.com/l/b5/eb/78/ae/spacious-and-beautiful-work-areas-of-our-global-headquarters.jpg" style="border-radius: 10px;" data-aos="fade-up" data-aos-delay="900" />
+  </div>
+</section>
+
+
+
+
+
+
+
+<div class="form-container">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <input type="tel" id="phone" placeholder="Your Phone Number">
+  <input type="url" id="website" placeholder="Your Website (Optional)">
+  <select id="budget">
+    <option value="">Select Your Budget</option>
+    <option value="5k-10k">₹5,000 - ₹10,000</option>
+    <option value="10k-20k">₹10,000 - ₹20,000</option>
+    <option value="20k+">₹20,000+</option>
+  </select>
+  <select id="timeline">
+    <option value="">Project Deadline</option>
+    <option value="1_week">Within 1 Week</option>
+    <option value="2_weeks">Within 2 Weeks</option>
+    <option value="1_month">Within 1 Month</option>
+  </select>
+  <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+  <label><input type="checkbox" id="consent" required> I agree to the privacy policy.</label>
+  <button onclick="submitForm()">Send Request</button>
+</div>
+
+</section>
+
+  <footer>
+    &copy; 2025 Code Wave. All rights reserved. | Powered by <strong>aamir.cloud</strong>
+  </footer>
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    new Typed("#type", {
+      strings: ["Web Developer", "UI/UX Designer", "Frontend Devloper"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+
+   function toggleMode() {
+  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+  document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+  document.getElementById("toggle-icon").innerHTML = isDark ? "🌞" : "🌜";
+}
+
+
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("show");
+    }
+
+    function closeMenu() {
+      document.getElementById("nav").classList.remove("show");
+    }
+    
+  
+
+  </script>
+  
+<script>
+function submitForm() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const website = document.getElementById("website").value.trim();
+  const budget = document.getElementById("budget").value;
+  const timeline = document.getElementById("timeline").value;
+  const message = document.getElementById("message").value.trim();
+  const consent = document.getElementById("consent").checked ? "Yes" : "No";
+
+  if (!name || !email || !message || consent === "No") {
+    alert("❌ Please fill all required fields and agree to the privacy policy!");
+    return;
+  }
+fetch('https://aamir.cloud/submit.php', {
+
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      phone: phone,
+      website: website,
+      budget: budget,
+      timeline: timeline,
+      message: message,
+      consent: consent
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log("Server response:", data);
+    if (data.result === "success") {
+      alert(`✅ Thank you, ${name}! Your message has been sent.`);
+
+      // Form clear भी कर सकते हो:
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("website").value = "";
+      document.getElementById("budget").value = "";
+      document.getElementById("timeline").value = "";
+      document.getElementById("message").value = "";
+      document.getElementById("consent").checked = false;
+
+    } else {
+      alert("❌ Something went wrong. Please try again!");
+    }
+  })
+  .catch(error => {
+    console.error("Fetch error:", error);
+    alert("❌ Failed to send. Please check your connection or try again later!");
+  });
+}
+</script>
+
+
+</body>
+</html>
 
